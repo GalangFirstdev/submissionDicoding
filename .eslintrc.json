@@ -1,0 +1,22 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "no-console":"off",
+        "semi": ["error", "always"],
+        "linebreak-style": ["error", "unix"],
+        // Quotes memeriksa penggunaan tanda kutip dalam sebuah kode, ada 2 opsi 'single'dan 'double'
+        "quotes": [ "error" , "single"],
+        // ini menentukan spasi
+        "indent": ["error", 2]
+    }
+}
