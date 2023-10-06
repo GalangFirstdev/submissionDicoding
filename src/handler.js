@@ -1,6 +1,6 @@
 const { nanoid } = require('nanoid');
 
-const books = require('./books');
+const notes = require('./notes');
 
 
 
@@ -81,9 +81,9 @@ const handlerAddNoteapp = (request, h) => {
 
   };
 
-  books.push(Newbooks);
+  notes.push(Newbooks);
 
-  const isSucces = books.filter((book) => book.id === id).length > 0;
+  const isSucces = notes.filter((book) => book.id === id).length > 0;
 
   if (isSucces) {
 
@@ -127,7 +127,7 @@ const getbyAllbook = (request, h) => {
 
   const { name, reading, finished } = request.query;
 
-  let filteredBooks = books;
+  let filteredBooks = notes;
 
   if(name !== undefined || reading !== undefined || finished !== undefined){
 
@@ -174,7 +174,7 @@ const getbyAllbook = (request, h) => {
 
     data : {
 
-      books : result
+      notes : result
 
     }
 
@@ -194,12 +194,12 @@ const getbyAllbook = (request, h) => {
 
 
 
-// menampilkan detail dari books
+// menampilkan detail dari notes
 const getBookByidhandler = (request, h) => {
 
   const { id } = request.params;
 
-  const bookId = books.filter((b) => b.id === id)[0];
+  const bookId = notes.filter((b) => b.id === id)[0];
 
   if (bookId !== undefined) {
 
@@ -233,7 +233,7 @@ const getBookByidhandler = (request, h) => {
 
 
 
-// edit books
+// edit notes
 
 const editbooksHandler = (request, h) => {
 
@@ -259,7 +259,7 @@ const editbooksHandler = (request, h) => {
 
   const updatedAt = new Date().toISOString();
 
-  const index = books.findIndex((book) => book.id === id);
+  const index = notes.findIndex((book) => book.id === id);
 
   if (index !== -1) {
 
@@ -297,9 +297,9 @@ const editbooksHandler = (request, h) => {
 
     const finished = (pageCount === readPage);
 
-    books[index] = {
+    notes[index] = {
 
-      ...books[index],
+      ...notes[index],
 
       name,
 
@@ -357,11 +357,11 @@ const handlerBydeleteBooks = (request, h) => {
 
   const { id } = request.params;
 
-  const Index = books.findIndex((book) => book.id === id);
+  const Index = notes.findIndex((book) => book.id === id);
 
   if (Index !== -1) {
 
-    books.splice(Index, 1);
+    notes.splice(Index, 1);
 
     const response = h.response({
 

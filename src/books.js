@@ -1,3 +1,3 @@
-const books = [];
+const notes = [];
 
-module.exports = books;
+module.exports = notes;
