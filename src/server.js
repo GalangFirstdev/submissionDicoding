@@ -8,8 +8,7 @@ const init = async () => {
     routes: {
       cors: {
         origin: ['*'],
-        headers: ['Accept', 'Content-Type'],
-        additionalHeaders: ['X-Requested-With'],
+
 
       }
     }
