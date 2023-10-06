@@ -18,7 +18,7 @@ const handlerAddNoteapp = (request, h) => {
 
   if (name === undefined) {
 
-    const response = h.   response({
+    const response = h.response({
 
       status: 'fail',
 
@@ -95,7 +95,7 @@ const handlerAddNoteapp = (request, h) => {
 
       data: {
 
-        notes: id
+        bookId: id
 
       }
 
