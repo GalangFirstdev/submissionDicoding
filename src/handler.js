@@ -95,7 +95,7 @@ const handlerAddNoteapp = (request, h) => {
 
       data: {
 
-        bookId: id
+        notes: id
 
       }
 
