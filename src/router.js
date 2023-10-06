@@ -9,27 +9,27 @@ const { handlerAddNoteapp,
 const router = [
   {
     method: 'POST',
-    path: '/books',
+    path: '/notes',
     handler: handlerAddNoteapp,
   },
   {
     method: 'GET',
-    path: '/books',
+    path: '/notes',
     handler: getbyAllbook,
   },
   {
     method: 'GET',
-    path: '/books/{id}',
+    path: '/notes/{id}',
     handler: getBookByidhandler,
   },
   {
     method: 'PUT',
-    path: '/books/{id}',
+    path: '/notes/{id}',
     handler: editbooksHandler,
   },
   {
     method: 'DELETE',
-    path: '/books/{id}',
+    path: '/notes/{id}',
     handler: handlerBydeleteBooks,
   }
 ];
