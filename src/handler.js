@@ -6,6 +6,12 @@ const notes = require('./books');
 
 
 
+const getbyAllbook = () => ({
+  status: 'succes',
+  data: {
+    notes,
+  },
+});
 
 
 // get data secara spesifik
@@ -123,70 +129,70 @@ const handlerAddNoteapp = (request, h) => {
 
 
 // menampilkan data 
-const getbyAllbook = (request, h) => {
+// const getbyAllbook = (request, h) => {
 
-  const { name, reading, finished } = request.query;
+//   const { name, reading, finished } = request.query;
 
-  let filteredBooks = notes;
+//   let filteredBooks = notes;
 
-  if(name !== undefined || reading !== undefined || finished !== undefined){
+//   if(name !== undefined || reading !== undefined || finished !== undefined){
 
-    filteredBooks = filteredBooks.filter((book) => {
+//     filteredBooks = filteredBooks.filter((book) => {
 
-      if(reading !== undefined) {
+//       if(reading !== undefined) {
 
-        if(!(book.reading === Boolean(Number(reading)))) return false;
+//         if(!(book.reading === Boolean(Number(reading)))) return false;
 
-      }
+//       }
 
-      if(name !== undefined) {
+//       if(name !== undefined) {
 
-        if(!book.name.toLowerCase().includes(name.toLowerCase()))
-          return false;
+//         if(!book.name.toLowerCase().includes(name.toLowerCase()))
+//           return false;
 
-      }
+//       }
 
-      if(finished !== undefined) {
+//       if(finished !== undefined) {
 
-        if (!(book.finished === Boolean(Number(finished)))) return false;
+//         if (!(book.finished === Boolean(Number(finished)))) return false;
 
-      }
+//       }
 
-      return true;
+//       return true;
 
-    });
+//     });
 
-  }
+//   }
 
-  const result = filteredBooks.map((b) => ({
+//   const result = filteredBooks.map((b) => ({
 
-    id : b.id,
+//     id : b.id,
 
-    name : b.name,
+//     name : b.name,
 
-    publisher : b.publisher,
+//     publisher : b.publisher,
 
-  }));
+//   }));
 
-  const response = h.response ({
+//   const response = h.response ({
 
-    status : 'success',
+//     status : 'success',
 
-    data : {
+//     data : {
 
-      notes : result
+//       notes : result
 
-    }
+//     }
 
-  });
+//   });
 
-  response.code(200);
+//   response.code(200);
 
-  return response;
+//   return response;
 
     
 
-};    
+// };    
 
   
     
